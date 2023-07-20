@@ -1,6 +1,6 @@
 
 // Fetch the JSON data
-fetch("http://127.0.0.1:5500/assets/movies.json")
+fetch("https://stream4free.vercel.app/assets/movies.json")
   .then((response) => response.json())
   .then((data) => {
     const moviesList = document.getElementById("moviesList");
