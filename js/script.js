@@ -124,8 +124,51 @@ setTimeout(function() {
 }, 300); // Set the same duration as the CSS transition
 }
 
-(function (s, u, z, p) { s.src = u, s.setAttribute('data-zone', z), p.appendChild(s); })(document.createElement('script'), 'https://inklinkor.com/tag.min.js', 5741273, document.body || document.documentElement);
+// Function to create and display the YouTube video in the movie popup
+function openMoviePopup(videoId) {
+  const trailerElement = document.createElement("div");
+  trailerElement.className = "movie-popup";
+
+  const iframeElement = document.createElement("iframe");
+  iframeElement.setAttribute("src", `https://www.youtube.com/embed/${videoId}`);
+  iframeElement.setAttribute("allowfullscreen", "");
+  iframeElement.setAttribute("frameborder", "0");
+
+  trailerElement.appendChild(iframeElement);
+
+  movieElement.appendChild(trailerElement);
+}
+
+// Fetch the JSON data
+fetch("https://stream4free.vercel.app/assets/movies.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const moviesList = document.getElementById("moviesList");
+
+    // Iterate over the movies data and create HTML elements
+    data.forEach((movie) => {
+      const movieElement = document.createElement("div");
+      movieElement.className = "movie-poster";
+      movieElement.id = movie.id; // Set the id property of the movie element
+
+      // ... Your existing code for creating the movie elements ...
+
+      // Inside the data.forEach loop, add the following lines to handle the movie popup
+      const videoId = movie["movie.trailer"];
+      movieElement.addEventListener("mouseenter", () => openMoviePopup(videoId));
+      movieElement.addEventListener("mouseleave", () => {
+        // Remove the trailerElement from movieElement to hide the video
+        const trailerElement = document.querySelector(".movie-popup");
+        if (trailerElement) {
+          movieElement.removeChild(trailerElement);
+        }
+      });
+
+      // ... Rest of your code to append the movie elements to the moviesList ...
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching movies data:", error);
+  });
 
 
-
-  
