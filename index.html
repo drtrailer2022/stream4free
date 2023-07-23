@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css">
+   
     <title>
       Stream4free™ | Watch Latest Movies & TV-Series Online Free
     </title>
@@ -134,7 +134,7 @@
     />
     
     <link rel="manifest" href="/site.webmanifest"></link>
-    <link rel="canonical" href="https://stream4free.vercel.app/dashboad.html" />
+    <link rel="canonical" href="https://stream4free.vercel.app/" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
@@ -144,6 +144,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com/2.2.19/tailwind.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4GLD1DG9BM"></script>
 <script>
@@ -229,36 +230,48 @@
       }
       </script>
 
-     
-    <link rel="stylesheet" href="/style.css">
-   
+      <script src="/disableCopy.js"></script>
   </head>
-  
-
+  <nav class="w-full bg-gray-600 " style="box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);">
+    <div class=" px-4 justify-center mx-auto md:items-center md:flex md:px-8">
+    <div>
+        <div class="flex items-center justify-between py-3 md:py-5 md:block">
+       
+      <img src='/assets/logo.png' alt='Logo' width={750} height={121} class="rounded-3xl "/>
+          <a href="/">
+            
+          </a>
+          </div> </div> </div>
+           </nav>
   <body class="bg-gray-600">
     <div class="container mx-auto p-8">
-      <header class="header">
-      
-        <h1 class="text-4xl font-bold mb-8 heading" style="color: #40D7BC; font-size: 40px;">Stream4free™ | Watch Latest Movies & TV-Series</h1>
-        <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded text-black flex items-center" onclick="event.preventDefault();">
-          <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 1em; margin-right: 4px;">
-          <span>Day Mode</span>
-        </button>
-       
-      </header>
+      <header class="header ">
+        <h1 class="text-4xl font-bold mb-8 py heading " style="color: #40D7BC; margin-top: 50px; font-size: 40px; text-shadow: 5px 5px 2px #000;  ">Stream4free™ | Watch Movies & TV-Shows</h1>
+        <div class="flex justify-center gap-4" >
+          <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center"
+            onclick="event.preventDefault();">
+            <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 1em; margin-right: 4px;">
+            <span>Day Mode</span>
+          </button>
+          <a href="/">
     
-      <div id="moviesList" class="grid-container"></div>
-      <div class="iframe-container" style="display:none;">
-        <div id="player"></div>
-        <!-- Your JavaScript code -->
-        <script src="js/script.js"></script>
+       
+    
+      </header>
+      
+      <body class="bg-gray-600">
+      
+        <div class="container mx-auto p-8 ">
+          <!-- ... Your existing content ... -->
+       
+          <div id="moviesList" class="grid-container " ></div>
+          
+          <script src="/js/script.js"></script>
+        
+          </div>
      
-      <footer class="footer">
-        <div class="logo flex items-center justify-center flex justify-center gap-4" style="margin-top: 50px; margin-bottom: 50px;">
-        <img src="/assets/logo.png" alt="Logo" style="display: block; margin: 0 auto; ">
-        </div>
-        <p class="logo flex items-center justify-center">&copy; 2023 Stream4free™. All rights reserved.</p>
-        </footer> 
+     
+      
    
             
     </div>
@@ -285,5 +298,95 @@
         }
       }
     </script>
+ <footer class="text-gray-600 body-font" style="box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);">
+    <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+   
+        <Link href="/" class="flex title-font items-center md:justify-start justify-center text-gray-900">
+        <img src='/assets/logo.png' alt='Logo' width={500} height={150} class="rounded-3xl " /></Link>
+     
+        <p class="mt-2 mx-6 text-sm text-gray-500 px-5">Watch Movies and TV Series Online Free</p>
+      </div>
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+      
+        <h2 class="title-font  text-blue-600 tracking-widest text-xl mb-3 font-bold md:text-xl" style="color: #40D7BC;  font-size: 25px; text-shadow: 5px 5px 2px #000;">HOLLYWOOD MOVIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">ACTION</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">DRAMA</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">THRILLER</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">ROMANCE</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+      
+          <h2 class="title-font  text-blue-600 tracking-widest text-xl mb-3 font-bold md:text-xl" style="color: #40D7BC;  font-size: 25px; text-shadow: 5px 5px 2px #000;">BOLLYWOOD MOVIES</h2>
+          <nav class="list-none mb-10">
+          <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">ACTION</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">DRAMA</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">THRILLER</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">ROMANCE</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font  text-blue-600 tracking-widest text-xl mb-3 font-bold md:text-xl" style="color: #40D7BC;  font-size: 25px; text-shadow: 5px 5px 2px #000;">ADULT MOVIES</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">GENERAL</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">HOT +18</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">PURE ADULT</a>
+            </li>
+            <li>
+              <a class="text-white text-xl font-bold hover:text-blue-800">EROTICA</a>
+            </li>
+          </nav>
+        </div>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font  text-blue-600 tracking-widest text-xl mb-3 font-bold md:text-xl" style="color: #40D7BC;  font-size: 25px; text-shadow: 5px 5px 2px #000;">ABOUT US</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a href="/assets/contact.html" class="text-white text-xl font-bold hover:text-blue-800">Contact</a>
+            </li>
+            <li>
+              <a href="/assets/privacy-policy.html" class="text-white text-xl font-bold hover:text-blue-800">Privacy Policy</a>
+            </li>
+            <li>
+            <a href="/assets/tearms.html" class="text-white text-xl font-bold hover:text-blue-800">Tearm of Use</a>
+            </li>
+            <li>
+            <a href="/assets/dmca.html" class="text-white text-xl font-bold hover:text-blue-800">D.M.C.A</a>
+            </li>
+          </nav>
+        </div>
+      </div>
+    </div>
+  
+    <div class="bg-gray-600">
+      
+        <p class="logo flex items-center justify-center text-2xl mb-2 font-bold" style="color: #8E8E8E; text-shadow: 3px 5px 5px #000; margin-top: 50px; margin-bottom: 50px;">&copy; 2023 Stream4free™. All rights reserved.</p>
+        
+     
+    </div>
+  </footer>
   </body>
 </html>
