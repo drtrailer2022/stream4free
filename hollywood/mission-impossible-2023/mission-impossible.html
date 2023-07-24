@@ -209,24 +209,23 @@
         </a>
         </div> </div> </div>
          </nav>
-<body class="bg-gray-600">
-
-  <header class="header ">
-    <h1 class="text-4xl font-bold mb-8 py heading " style="color: #40D7BC; margin-top: 50px; font-size: 40px; text-shadow: 5px 5px 2px #000;  ">Stream4free™ | Watch Movies & TV-Shows</h1>
-    <div class="flex justify-center gap-4" >
-      <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center"
-        onclick="event.preventDefault();">
-        <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
-        <span>Day Mode</span>
-      </button>
-      <a href="/">
-
-        <button class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center">
-          <img src="/assets/back.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
-          Back
-        </button></a>
-
-  </header>
+         <div class=" w-full bg-gray-600">
+          <div class="header flex justify-between items-center">
+            <h1 class="text-4xl font-bold mb-8 py heading" style="color: #40D7BC; margin-top: 50px; font-size: 40px; text-shadow: 5px 5px 2px #000;">Stream4free™ | Watch Movies & TV-Shows</h1>
+          
+            <div class="flex gap-4">
+              <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center" onclick="event.preventDefault();">
+                <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
+                <span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #000;">Day Mode</span>
+              </button>
+              <a href="/">
+                <button class="text-2xl font-bold px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center" style="text-shadow: 2px 5px 5px #000;">
+                  <img src="/assets/back.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
+                  Back
+                </button>
+              </a>
+            </div>
+          </div>
 
   <div class="bg-gray-600 rounded-3xl-lg shadow p-4" id="movieDetails"></div>
 
@@ -247,6 +246,7 @@
         if (movie) {
           // Create the HTML content with movie details
           const movieHTML = `
+         
           <h2 class="text-5xl mb-2 font-bold text-center" style="color: #40D7BC; font-size: 40px; text-shadow: 5px 5px 2px #000;"movie-title">${movie.title}</h2>
 
               <div  style="margin-top: 50px; margin-bottom: 50px;">
@@ -340,8 +340,8 @@
     <div class="circle center-align cursor-pointer" onclick="openPopup('popup.html')">
       <h2 class="text-4xl mb-2 font-bold text-center" style="color: #8E8E8E; text-shadow: 3px 5px 5px #000;" margin-top: 10px;">Click to Watch Official Trailer</h2>
     </div>
-    <div class="circle center-align cursor-pointer  " onclick="openPopup('popup.html')">
-      <img src="${movie.poster}" alt="Movie Poster" class="circle center-align cursor-pointer rounded-3xl ">
+    <div class="circle center-align cursor-pointer image-sharpen transform transition-transform flex justify-center items-centerduration-300 hover:scale-110" onclick="openPopup('popup.html')">
+      <img src="${movie.poster}" alt="Movie Poster"  class="circle center-align cursor-pointer rounded-3xl relative image-sharpen transform transition-transform flex justify-center items-centerduration-100 hover:scale-100">
     </div>
   </div>
 `;
@@ -415,28 +415,30 @@
       }
     }
   </script>
-  <script>
-    const modeToggleBtn = document.getElementById('modeToggleBtn');
-    const body = document.body;
+<script>
+  const modeToggleBtn = document.getElementById('modeToggleBtn');
+  const body = document.body;
 
-    modeToggleBtn.addEventListener('click', toggleMode);
+  modeToggleBtn.addEventListener('click', toggleMode);
 
-    var logoImage = document.querySelector('.logo');
-    if (logoImage.style.display === 'none') {
-      logoImage.style.display = 'block';
+  var logoImage = document.querySelector('.logo');
+  if (logoImage.style.display === 'none') {
+    logoImage.style.display = 'block';
+  } else {
+    logoImage.style.display = 'none';
+  }
+
+  function toggleMode() {
+    body.classList.toggle('night-mode');
+    if (body.classList.contains('night-mode')) {
+      modeToggleBtn.innerHTML = '<img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">' +
+                                '<span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #fff;">Night Mode</span>';
     } else {
-      logoImage.style.display = 'none';
+      modeToggleBtn.innerHTML = '<img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">' +
+                                '<span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #000;">Day Mode</span>';
     }
-
-    function toggleMode() {
-      body.classList.toggle('night-mode');
-      if (body.classList.contains('night-mode')) {
-        modeToggleBtn.textContent = 'Night Mode';
-      } else {
-        modeToggleBtn.textContent = 'Day Mode';
-      }
-    }
-  </script>
+  }
+</script>
 
 
 <footer class="text-gray-600 body-font" style="box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);">
