@@ -243,24 +243,23 @@
           </a>
           </div> </div> </div>
            </nav>
-  <body class="bg-gray-600">
-    <div class="container mx-auto p-8">
-      <header class="header ">
-        <h1 class="text-4xl font-bold mb-8 py heading " style="color: #40D7BC; margin-top: 50px; font-size: 40px; text-shadow: 5px 5px 2px #000;  ">Stream4free™ | Watch Movies & TV-Shows</h1>
-        <div class="flex justify-center gap-4" >
-          <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center"
-            onclick="event.preventDefault();">
-            <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 1em; margin-right: 4px;">
-            <span>Day Mode</span>
-          </button>
-          <a href="/">
-    
-            <button class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center">
-              <img src="/assets/back.png" alt="Day and Night Icon" style="height: 1em; margin-right: 4px;">
-              Back
-            </button></a>
-    
-      </header>
+      <body class=" w-full bg-gray-600">
+            <div class="header flex justify-between items-center">
+              <h1 class="text-4xl font-bold mb-8 py heading" style="color: #40D7BC; margin-top: 50px; font-size: 40px; text-shadow: 5px 5px 2px #000;">Stream4free™ | Watch Movies & TV-Shows</h1>
+            
+              <div class="flex gap-4">
+                <button id="modeToggleBtn" class="px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center" onclick="event.preventDefault();">
+                  <img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
+                  <span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #000;">Day Mode</span>
+                </button>
+                <a href="/">
+                  <button class="text-2xl font-bold px-4 py-2 mt-4 mb-4 bg-gray-200 rounded-3xl text-black flex items-center" style="text-shadow: 2px 5px 5px #000;">
+                    <img src="/assets/back.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">
+                    Back
+                  </button>
+                </a>
+              </div>
+            </div>
       
       <div class="container my-24 px-6 mx-auto">
 
@@ -366,26 +365,66 @@
     <script>
       const modeToggleBtn = document.getElementById('modeToggleBtn');
       const body = document.body;
-  
+    
       modeToggleBtn.addEventListener('click', toggleMode);
-      
+    
       var logoImage = document.querySelector('.logo');
       if (logoImage.style.display === 'none') {
-          logoImage.style.display = 'block';
+        logoImage.style.display = 'block';
       } else {
-          logoImage.style.display = 'none';
+        logoImage.style.display = 'none';
       }
-  
-  
+    
       function toggleMode() {
         body.classList.toggle('night-mode');
         if (body.classList.contains('night-mode')) {
-          modeToggleBtn.textContent = 'Night Mode';
+          modeToggleBtn.innerHTML = '<img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">' +
+                                    '<span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #fff;">Night Mode</span>';
         } else {
-          modeToggleBtn.textContent = 'Day Mode';
+          modeToggleBtn.innerHTML = '<img src="/assets/day-and-night.png" alt="Day and Night Icon" style="height: 2em; margin-right: 4px;">' +
+                                    '<span class="text-2xl font-bold" style="text-shadow: 2px 5px 5px #000;">Day Mode</span>';
         }
       }
     </script>
+    <style>
+      /* Ripple effect on button click */
+      .ripple {
+        position: relative;
+        overflow: hidden;
+      }
+    
+      .ripple::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.6);
+        opacity: 0;
+        pointer-events: none;
+      }
+    
+      .ripple:focus::before {
+        width: 200%;
+        height: 200%;
+        opacity: 1;
+        animation: ripple-animation 0.4s ease-out;
+      }
+    
+      @keyframes ripple-animation {
+        from {
+          transform: translate(-50%, -50%) scale(0);
+          opacity: 0.6;
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
  <footer class="text-gray-600 body-font" style="box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);">
     <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
       <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
