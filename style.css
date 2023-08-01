@@ -1,0 +1,772 @@
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .fade-out {
+    opacity: 0;
+  }
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+  }
+
+  .content .btn {
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    margin-top: rem;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* Add a 16px gap between elements */
+  }
+  
+  .logo {
+    margin-bottom: 16px;
+  }
+  .night-mode {
+    background-color: #000;
+    color: #fff;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .movie-poster {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #333;
+    border-radius: 4px;
+  }
+  
+  .movie-poster img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-poster:hover img {
+    transform: scale(1.1);
+  }
+  
+  .movie-poster .movie-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .movie-poster:hover .movie-popup {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .movie-poster .movie-popup iframe {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .watch-now-button {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 16px;
+    background-color: #2c4bf8;
+    color: white;
+    font-weight: bold;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .watch-now-button:hover {
+    background-color: #000080;
+  }
+  
+  .movie-poster:hover .watch-now-button {
+    bottom: 10px;
+    opacity: 1;
+  }
+  
+  /* Add custom CSS to make the player container responsive and center-aligned */
+  .player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+   
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio (9 / 16 * 100%) */
+    padding-bottom: 60%;
+    /* Increase the height to 75% */
+    overflow: hidden;
+  }
+
+  .player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Include other Plyr JavaScript files if needed */
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    /* Aspect ratio of 16:9 (360/640 = 0.5625) */
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  input[type="range"] {
+    width: 200px;
+    margin: 0 8px;
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      padding-bottom: 75%;
+      /* Adjust the aspect ratio for smaller screens */
+    }
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .movie-title {
+    color: #40d7bc;
+  
+    font-size: 50px;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    /* Add a 16px gap between elements */
+  }
+
+  .logo {
+    margin-bottom: 16px;
+  }
+
+  .night-mode {
+    background-color: #000;
+    color: #fff;
+  }
+
+   /* Add your styling for day and night mode here */
+   body {
+    background-color: #fff;
+    /* Day mode background color */
+    color: #000;
+    /* Day mode text color */
+  }
+
+  .night-mode body {
+    background-color: #000;
+    /* Night mode background color */
+    color: #fff;
+    /* Night mode text color */
+  }
+
+  .night-mode .wrapper {
+    box-shadow: 0 18px 20px 6px rgba(255, 255, 255, 0.5);
+  }
+
+  .night-mode .controls {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .night-mode .movie-title {
+    color: #40d7bc;
+  
+  }
+
+  .night-mode .bg-gray-600 {
+    background-color: #000;
+  }
+
+  .night-mode .bg-gray-600.rounded-lg.shadow {
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+
+  .night-mode .bg-gray-200 {
+    background-color: #333;
+  }
+
+  .night-mode .bg-gray-200.rounded {
+    background-color: #222;
+  }
+
+  .night-mode .text-black {
+    color: #fff;
+  }
+    /* page trailer popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .popup {
+      position: relative;
+      width: 800px;
+      background-color: gray;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      animation: slide-down 0.5s ease;
+    }
+  
+    @keyframes slide-down {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+  
+    .close-button {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #40D7BC;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  
+    .close-button:hover {
+      background-color: #129712;
+    }
+  
+    .close-button:focus {
+      outline: none;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+  
+    .center-align {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .cursor-pointer {
+      cursor: pointer;
+    }
+
+     /* bollywood  page css*/
+
+       /* Add custom CSS to make the player container responsive and center-aligned */
+    .player-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 aspect ratio (9 / 16 * 100%) */
+      padding-bottom: 60%;
+      /* Increase the height to 75% */
+      overflow: hidden;
+    }
+
+    .social-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-top: 56.25%;
+      /* 16:9 aspect ratio (9 / 16 * 100%) */
+     
+    }
+
+    .player-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+       /* Container Styles */
+       .container {
+        padding: 20px;
+      }
+  
+      /* Popup Overlay Styles */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+  
+      /* Popup Content Styles */
+      .popup-content {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+        width: 800px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        animation: slide-down 0.5s ease;
+        overflow: hidden;
+      }
+  
+      /* Close Button Styles */
+  
+   /* Close Button Styles */
+   .close-button {
+        position: relative;
+        top: 10px;
+        right: 10px;
+        background-color: #10f310;
+        color: white;
+        border: none;
+        top: 0;
+        margin-bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      /* Video Wrapper Styles */
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        overflow: hidden;
+      }
+  
+      /* Responsive Video Embed Styles */
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+  
+      /* Animation Styles */
+      @keyframes slide-down {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+         /* Include other Plyr JavaScript files if needed */
+         .wrapper {
+          position: relative;
+          width: 100%;
+          height: 0;
+          padding-bottom: 56.25%;
+          /* Aspect ratio of 16:9 (360/640 = 0.5625) */
+          box-shadow: 0 18px 20px 6px rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+    
+        .controls {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px;
+        }
+    
+        button {
+          background-color: transparent;
+          border: none;
+          color: white;
+          font-size: 24px;
+          cursor: pointer;
+        }
+    
+        input[type="range"] {
+          width: 200px;
+          margin: 0 8px;
+        }
+    
+        @media (max-width: 768px) {
+          .wrapper {
+            padding-bottom: 75%;
+            /* Adjust the aspect ratio for smaller screens */
+          }
+        }
+        .center-align {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+        .img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+        }
+    
+        .movie-title {
+          color: #40d7bc;
+       
+          font-size: 50px;
+        }
+        .header {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 16px;
+          /* Add a 16px gap between elements */
+        }
+    
+        .logo {
+          margin-bottom: 16px;
+        }
+    
+        .night-mode {
+          background-color: #000;
+          color: #fff;
+        }
+         /* Add your styling for day and night mode here */
+         body {
+          background-color: #fff;
+          /* Day mode background color */
+          color: #000;
+          /* Day mode text color */
+        }
+    
+        .night-mode body {
+          background-color: #000;
+          /* Night mode background color */
+          color: #fff;
+          /* Night mode text color */
+        }
+    
+        .night-mode .wrapper {
+          box-shadow: 0 18px 20px 6px rgba(255, 255, 255, 0.5);
+        }
+    
+        .night-mode .controls {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+    
+        .night-mode .movie-title {
+          color: #40d7bc;
+        
+        }
+    
+        .night-mode .bg-gray-600 {
+          background-color: #000;
+        }
+    
+        .night-mode .bg-gray-600.rounded-lg.shadow {
+          box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+        }
+    
+        .night-mode .bg-gray-200 {
+          background-color: #333;
+        }
+    
+        .night-mode .bg-gray-200.rounded {
+          background-color: #222;
+        }
+    
+        .night-mode .text-black {
+          color: #fff;
+        }
+        @media (max-width: 600px) {
+          .circle {
+          width: 100%;
+          height: auto;
+             }
+             }
+ /* Your existing CSS styles */
+
+ .movie-poster {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+  border-radius: 4px;
+
+}
+
+.movie-poster img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #333;
+  border-radius: 4px;
+ 
+
+}
+
+.movie-poster:hover img {
+  transform: scale(1.1);
+  
+}
+
+/* New CSS for the movie popup */
+.movie-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; /* Hide the popup by default */
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.movie-poster:hover .movie-popup {
+  display: flex; /* Show the popup when hovering over the movie poster */
+  opacity: 1;
+}
+
+.movie-popup iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.popup-overlay {
+  position: fixed;
+  display: none; /* Hide the popup by default */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+/* Add CSS for the video overlay */
+.grid-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.grid-item:hover .video-overlay {
+  opacity: 1;
+}
+
+/* Add CSS for the "Watch Now" button */
+.watch-now-button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #40D7BC;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 4px;
+}
+
+/* Add CSS for the movie title and genre */
+.movie-title {
+  text-align: center;
+  font-weight: bold;
+  color: #40D7BC;
+  font-size: 30px;
+}
+
+.movie-genre {
+  text-align: center;
+  font-weight: bold;
+  color: #C0C0C0;
+  font-size: 20px;
+}
+
+.movie-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.watch-now-button-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.watch-now-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #40D7BC;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.custom-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+} 
+ /* Custom CSS for image sharpen */
+ .image-sharpen img {
+  image-rendering: pixelated;
+}
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
