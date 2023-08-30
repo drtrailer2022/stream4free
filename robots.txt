@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://stream4free.vercel.app/
+
+# Sitemaps
+Sitemap: https://stream4free.vercel.app/sitemap.xml/
